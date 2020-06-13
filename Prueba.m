@@ -1,0 +1,1 @@
+function Prueba (num1, num2, num3)  arr = [num1 num2 num3];  arrSort = sort (arr);  if (arrSort (3)^2 == arrSort(2)^2 + arrSort(1)^2)     disp ("Es triangulo rectangulo");  else    disp ("No es triangulo rectangulo");   endifendfunctionfunction Prueba1  x = log ( atan ( sin (pi/4)))  disp (x) endfunction
