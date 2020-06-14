@@ -1,5 +1,4 @@
-1.  Entre a la terminal de Octave desde Windows o si tiene Linux/MacOS
-    en la terminal ponga: "octave-cli"
+1.  Entre a la terminal de Octave desde Windows o si tiene Linux/MacOS en la terminal ponga: "octave-cli"
 2.  Ejecute los programas en la misma carpeta raíz descargada.
 3.  Para compilar el programa en la terminal solo inserte el nombre del
     archivo. Ejemplo: 
@@ -7,8 +6,7 @@
     > problem15
 
     [ERORRES COMUNES]: 
-1.  Si el programa no se ejecuta, es probable que sea una
-    una función, revise e inserte el ejemplo que se encuentra en la parte
+1.  Si el programa no se ejecuta, es probable que sea una función, revise e inserte el ejemplo que se encuentra en la parte
     superior comentada.
 2.  Si sucede bucles infinitos, reinicie Octave.
 
