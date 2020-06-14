@@ -1,7 +1,8 @@
-u = -8:0.5:8;
-v = u;
-[U, V] = meshgrid (u, v);
-r = sqrt (U. ^2 + V. ^2) + eps;
-w = sin (r)/r;
-mesh (w)
+tx = linspace (-8, 8, 41)';
+ty = linspace (-8, 8, 41)';
+[xx, yy] = meshgrid (tx, ty);
+r = sqrt (xx .^ 2 + yy .^ 2) + eps;
+tz = sin (r) ./ r;
+meshc (tx, ty, tz);
+
 
