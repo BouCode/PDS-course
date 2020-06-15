@@ -1,3 +1,4 @@
+#Ejemplo problem33 (12, 1, 1)
 function problem33(frec,mag,fase)
 max_plots=4; 
 num_points=200; 
