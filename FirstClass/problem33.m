@@ -14,7 +14,7 @@ mi_limite=min(length(frec),max_plots);
 
 while (i<=mi_limite)
     x=mag(i)*cos(2*pi*frec(i)*t+fase(i));
-    mi_titulo= sprintf('Sinusoide con f=#d Hz.,mag=#4.2f, fase=#4.2f radianes',frec(i), mag(i), fase(i));
+    mi_titulo= sprintf('Sinusoide con f=%d Hz.,mag=%4.2f, fase=%4.2f radianes',frec(i), mag(i), fase(i));
     subplot(mi_limite,1,i)
     plot(t,x);
     grid;
@@ -22,6 +22,7 @@ while (i<=mi_limite)
     ylabel('Amplitud');
     i=i+1;
     xlabel('Tiempo (seg)');
+    disp (i)
 endwhile
 
 endfunction
