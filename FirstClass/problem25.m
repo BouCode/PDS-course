@@ -6,7 +6,7 @@ hold on
 plot (t, x2)
 hold off
 grid on;
-sortX2 = sort (x2);
+sortX2 = sort (x2)
 disp ("Minimo de x2(t)");
 disp (sortX2 (1));
 disp ("Maximo de x2(t)");

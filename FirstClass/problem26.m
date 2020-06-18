@@ -1,4 +1,4 @@
-#Ejemplo  problema26 ([1:10; 1:10])
+#Ejemplo  problem26 ([1:10 1:10])
 function problem26 (A)
     row = size (A,1)
     column = size (A,2)
