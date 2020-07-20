@@ -35,21 +35,63 @@ Wim2 = conv (Xim2, Xim3);
 Wim3 = conv (Xim1, Xim3);
 
 #Convolucion 1:Reales
-subplot (3, 1, 1);
+subplot (3, 3, 1);
 stem (Wre1, 'r');
 grid;
 xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
 title('Convolucion Xre1');
 
-subplot (3, 1, 2);
+
+#Convolucion 2:Imaginarios
+subplot (3, 3, 2);
 stem (Wim1, 'r');
 grid;
 xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
 title('Convolucion Xim1');
 
+#Convolucion 3: Convolucion total
 w = conv (x1, x2)
-subplot (3, 1, 3);
+subplot (3, 3, 3);
 stem (w, 'r');
 grid;
 xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
-title ('Convolucion total')
+title ('Convolucion total 1')
+
+
+subplot (3, 3, 4);
+stem (Wre2, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title('Convolucion Xre2');
+
+subplot (3, 3, 5);
+stem (Wim2, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title('Convolucion Xim2');
+
+w = conv (x2, x3)
+subplot (3, 3, 6);
+stem (w, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title ('Convolucion total 2')
+
+subplot (3, 3, 7);
+stem (Wre3, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title('Convolucion Xre3');
+
+subplot (3, 3, 8);
+stem (Wim3, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title('Convolucion Xim3');
+
+w = conv (x1, x3)
+subplot (3, 3, 9);
+stem (w, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title ('Convolucion total 3')
