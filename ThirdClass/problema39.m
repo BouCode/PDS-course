@@ -12,37 +12,44 @@ modc=2;
 fasea=pi/15;
 n0=9;n1=40;
 n =n0:0.5:n1;
-x=(modA).*(moda.^n).*(cos((fasea*n)+faseA)+j*sin((fasea*n)+faseA))
-x1=(modA).*(modb.^n).*(cos((fasea*n)+faseA)+j*sin((fasea*n)+faseA));
-x2=(modA).*(modc.^n).*(cos((fasea*n)+faseA)+j*sin((fasea*n)+faseA));
-w = conv (x, x1)
-figure (1);
-subplot (3,1,1);
-stem ( w, 'r')
-title ('Convolucion 1: Sinusoide con exponencial decreciente')
-grid on;
-figure (2);
-w = conv (x, x2)
-subplot (3,1,2);
-stem ( w, 'r')
-title ('Convolucion 2: Sinusoide con exponencia creciente')
-grid on;
-w = conv (x1, x2)
-figure (3);
-subplot (3,1,3);
-stem ( w, 'r')
-title ('Convolucion 3: Exponencial decreciente con exponencia creciente')
-grid on;
+x1=(modA).*(moda.^n).*(cos((fasea*n)+faseA)+j*sin((fasea*n)+faseA))
+x2=(modA).*(modb.^n).*(cos((fasea*n)+faseA)+j*sin((fasea*n)+faseA));
+x3=(modA).*(modc.^n).*(cos((fasea*n)+faseA)+j*sin((fasea*n)+faseA));
 
-figure(4);
-stem(n,x,'r');
-title('sinusoide compleja')
-grid on;
-figure(5);
-stem(n,x1,'g');
-title('exponencial decreciente')
-grid on;
-figure(6);
-stem(n,x2,'b');
-title(' exponencial creciente')
-grid on;
+#Real 
+Xre1 = (modA) .* (moda .^n) .* cos(fasea*n+faseA);
+Xre2 = (modA) .* (modb .^n) .* cos(fasea*n+faseA);
+Xre3 = (modA) .* (modc .^n) .* cos(fasea*n+faseA);
+
+#Imaginario
+Xim1 = (modA) .* (moda .^n) .* sin(fasea*n+faseA);
+Xim2 = (modA) .* (modb .^n) .* sin(fasea*n+faseA);
+Xim3 = (modA) .* (modc .^n) .* sin(fasea*n+faseA);
+
+Wre1 = conv (Xre1, Xre2);
+Wre2 = conv (Xre2, Xre3);
+Wre3 = conv (Xre1, Xre3);
+
+Wim1 = conv (Xim1, Xim2);
+Wim2 = conv (Xim2, Xim3);
+Wim3 = conv (Xim1, Xim3);
+
+#Convolucion 1:Reales
+subplot (3, 1, 1);
+stem (Wre1, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title('Convolucion Xre1');
+
+subplot (3, 1, 2);
+stem (Wim1, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title('Convolucion Xim1');
+
+w = conv (x1, x2)
+subplot (3, 1, 3);
+stem (w, 'r');
+grid;
+xlabel('Tiempo n (Seg)'); ylabel('Amplitud');
+title ('Convolucion total')
