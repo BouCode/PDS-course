@@ -1,7 +1,7 @@
 #Problema 6.5.a.1 (200Hz)
 close all;
 clear all;
-N = 200;
+N = 1000;
 M = 200;
 res = N - M;
 Fs = 8000;

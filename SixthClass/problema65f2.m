@@ -1,4 +1,4 @@
-#Problema 6.5.e.3 (2048)
+#Problema 6.5.f.2 (2048)
 close all;
 clear all;
 tic;
